@@ -34,7 +34,7 @@ def down(frame, x, y):
 def circle1():
     finish = False
     x,y,back,jumpping, frame = 50, 90, False, False, 0
-
+    count = 0
     while finish == False:
         clear_canvas()
         if x == 50 and y <= 500 and back == False:
@@ -47,7 +47,9 @@ def circle1():
             running(frame, x, y)
             x += 5
         elif x == 700 and back == False:
-            back = True
+            count += 1
+            if(count >= 20):
+                back = True
             stand(frame, x, y)
 
         elif x >= 50 and back == True:
@@ -66,6 +68,7 @@ def circle1():
         get_events()
 
 def circle2():
+    count = 0
     finish = False
     x,y,back,jumpping, frame = 50, 500, True, True, 0
     while finish == False:
@@ -83,7 +86,9 @@ def circle2():
             x += 5
 
         elif x == 700 and back == False:
-            back = True
+            count += 1
+            if (count >= 20):
+                back = True
             stand(frame, x, y)
 
         elif x >= 50 and back == True:
